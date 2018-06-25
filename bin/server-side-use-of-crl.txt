@@ -1,0 +1,9 @@
+Server-side use of the CRL
+For client certificates, it’s typically a server-side application (eg, Apache) that is doing the verification. 
+This application needs to have local access to the CRL.
+
+You can add the SSLCARevocationPath directive to Apache configuration and copy the CRL to web server. 
+The next time that user with revoked certificate connects to the web server, 
+Apache will check his client certificate against the CRL and deny access.
+
+Similarly, OpenVPN has a crl-verify directive so that it can block clients that have had their certificates revoked.

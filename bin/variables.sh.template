@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# Country
+COUNTRY=DE
+
+# State
+STATE=Bremen
+
+# Organization
+ORGANIZATION="My Wonderful Org"
+
+# Organiszation unit
+ORG_UNIT=Managers
+
+# Certificate Revocation List distribution point URL
+CRL_URL=https://managers.example.de/intermediate.crl.pem
+
+# Root folder of the Certificate Authority
+RF=/opt/root-ca
+
+# Path to the root key
+ROOT_KEY_FILE=$RF/private/ca.key.pem
+
+# Path to the root certificate
+ROOT_CERT_FILE=$RF/certs/ca.cert.pem
+
+# Path to the openssl configuration
+OPENSSL_CFG=$RF/openssl.cnf
+
+# Intermediate CA folder
+INT_RF=$RF/intermediate
+
+# Path to the intermediate key
+INT_KEY_FILE=$INT_RF/private/intermediate.key.pem
+
+# Path to the intermediate certificate request
+INT_CERT_REQ_FILE=$INT_RF/csr/intermediate.csr.pem
+
+# Path to the intermediate certificate
+INT_CERT_FILE=$INT_RF/certs/intermediate.cert.pem
+
+# Path to the intermediate openssl configuration
+INT_OPENSSL_CFG=$INT_RF/openssl.cnf
+
+# Path to the certificate chain
+INT_ROOT_CERT_CHAIN=$INT_RF/certs/ca-chain.cert.pem
+
+# Path to the Certificate Revokation List
+INT_CRL=$INT_RF/crl/intermediate.crl.pem
+
+# Path to the Certificate Revokation List and certificate chain combined
+INT_CRL_CHAIN=$INT_RF/certs/ca-crl-chain.cert.pem

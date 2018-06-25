@@ -1,0 +1,15 @@
+Client-side use of the CRL
+For server certificates, it’s typically a client-side application (eg, a web browser) that performs the verification. 
+This application must have remote access to the CRL.
+
+If a certificate was signed with an extension that includes crlDistributionPoints, 
+a client-side application can read this information and fetch the CRL from the specified location.
+
+The CRL distribution points are visible in the certificate X509v3 details.
+
+# openssl x509 -in cute-kitten-pictures.example.com.cert.pem -noout -text
+
+    X509v3 CRL Distribution Points:
+
+        Full Name:
+          URI:http://example.com/intermediate.crl.pem
